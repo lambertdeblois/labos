@@ -1,0 +1,141 @@
+
+%------------------------------------------------
+\begin{frame}[fragile]
+\frametitle{Avez-vous d\'ej\`a utilis\'e\ldots\ \AlertTitle{make}?}
+
+
+\begin{columns}
+
+\begin{column}{5cm}
+\begin{block}{}
+{\footnotesize
+\begin{semiverbatim}
+  \alert{$ cat Makefile}
+  hello: hello.c
+      gcc -o hello hello.c
+  
+  clean:
+      rm -f hello hello.o
+\end{semiverbatim}
+}
+\end{block}
+\end{column}
+
+
+\begin{column}{5cm}
+\begin{block}{}
+{\footnotesize
+\begin{semiverbatim}
+\alert{$ make}
+gcc -o hello hello.c
+
+\end{semiverbatim}
+}
+\end{block}
+\end{column}
+
+\end{columns}
+
+\NOTE{Used, on Unix, to automate program build tasks, i.e., to compile
+and link programs but also, more generally, to automate tasks.}
+
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}[fragile]
+\frametitle{Avez-vous d\'ej\`a utilis\'e\ldots\ \AlertTitle{SQL}?}
+
+\begin{columns}
+\begin{column}{4.2cm}
+\begin{block}{}
+{\footnotesize
+\begin{semiverbatim}
+SELECT title, price
+  FROM  Book
+   WHERE price > 30.00
+  ORDER BY price;
+\end{semiverbatim}
+}
+\end{block}
+\end{column}
+
+
+\begin{column}{6cm}
+\begin{block}{}
+{\footnotesize
+\begin{semiverbatim}
+Title                     Price
+--------------                 -----
+DSLs in Action            39.99
+Domain-Specific Languages 45.99
+Domain-Driven Design      49.99
+\end{semiverbatim}
+}
+\end{block}
+\end{column}
+
+\end{columns}
+
+
+\NOTE{SQL = Structured Query Language = language for managing data in
+relational databases.}
+
+
+\end{frame}
+
+
+
+%------------------------------------------------
+\begin{frame}[fragile]
+\frametitle{Avez-vous d\'ej\`a utilis\'e\ldots\ \AlertTitle{HTML}?}
+
+
+\begin{columns}[b]
+\begin{column}{5.5cm}
+\hspace{-2cm}\begin{block}{}
+{\footnotesize
+\begin{semiverbatim}
+<HTML>
+<HEAD>
+<TITLE>CSS Example</TITLE>
+</HEAD>
+
+<BODY>
+<H1>Title of web page</H1>
+
+<P>A first paragraph...</P>
+
+<P>Another paragraph, with an
+<A HREF=".">anchor
+(reference)</A>...</P>
+</BODY>
+
+</HTML>
+
+
+
+
+\end{semiverbatim}
+}
+\end{block}
+\end{column}
+
+\begin{column}{3cm}
+\vspace{0.25cm}
+{\hspace*{-1cm}\includegraphics[width=5.5cm]{Figures/css-example0.png}}
+\vspace{2cm}
+\end{column}
+
+
+\end{columns}
+
+
+\NOTE{HTML = Hypertext Meta Language, a subset/derivative of SGML for
+describing the contents of web pages.}
+
+\end{frame}
+
+
+\FRAME{Si oui, alors vous avez d\'ej\`a utilis\'e un DSL\\=
+\alert{\emph{Domain Specific Language}}\\= Langage Sp\'ecifique au Domaine}
+

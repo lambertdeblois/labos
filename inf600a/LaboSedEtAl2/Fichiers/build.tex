@@ -1,0 +1,506 @@
+\input{preamble}
+
+% Pour bac.
+\newcommand{\BAC}[1]{#1}
+\newcommand{\MAITRISE}[1]{}
+% Pour maitrise
+\renewcommand{\BAC}[1]{}
+\renewcommand{\MAITRISE}{}
+
+
+\author[Guy Tremblay, D\'epartement d'informatique]
+{Guy Tremblay\\Professeur}
+
+\institute{%
+D\'epartement d'informatique\\
+%
+UQAM\\%
+\url{http://www.labunix.uqam.ca/~tremblay}%
+}
+
+
+
+\date{$1^{er}$ octobre 2015}
+
+\begin{document}
+
+\title{Assemblage de logiciels}
+
+
+%------------------------------------------------
+\begin{frame}
+\frametitle{MGL7460 --- Automne 2015}
+
+  \titlepage
+
+\NOTE{\ }
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}
+\frametitle{Contenu}
+
+\large
+
+\tableofcontents
+
+
+\NOTE{\ }
+
+\end{frame}
+
+%\SEULEMENT{rake}
+
+
+
+%SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS
+\section{Introduction/motivation}
+%SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS
+
+%------------------------------------------------
+\begin{frame}
+\frametitle{\AlertTitle{Rappel}~: Parmi les premi\`eres choses \`a faire, quand on
+d\'eveloppe du code de fa\c{c}on professionnelle\ldots}
+
+<<{\em [Y]ou need to get the development infrastructure environment in
+order.  That means adopting (or improving) the fundamental Starter Kit
+practices:
+\begin{itemize}
+\item {Version control}
+
+\item {Unit Testing}
+
+\item \alert{Build automation}
+\end{itemize}
+
+{Version control} needs to come before anything else. It's the first
+bit of infrastructure we set up on any project.}>>
+
+\bigskip
+
+
+{\small<<Practices of an Agile Developer---Working in the Real
+World>>, Subramaniam \& Hunt, 2006.}
+
+
+\NOTE{\ }
+
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}
+\frametitle{\AlertTitle{Rappel}~: Quelques \emph{tips} de Hunt \& Thomas}
+
+\begin{itemize}
+
+\item[11.] \alert{DRY---Don't Repeat Yourself}
+
+Every piece of knowledge must have a single, unambiguous,
+authoritative representation within a system.
+
+\vfill
+
+\item[21.] \alert{Use the Power of Command Shells}
+
+Use the shell when graphical user interfaces don’t cut it.
+
+\vfill
+\item[61.] \alert{Don't Use Manual Procedures}
+
+A shell script or batch file will execute the same instructions, in
+the same order, time after time.
+
+\VF
+
+\end{itemize}
+
+\NOTEvide
+
+
+\end{frame}
+
+
+%------------------------------------------------
+\begin{frame}
+\frametitle{Bref, l'\'etape de \TT{build} est cruciale}
+\framesubtitle{Source~: \url{geek-and-poke.com}}
+
+\begin{tabular}{p{3in}p{2in}}
+\hspace*{-1.3cm}\includegraphics[width=3.1in]{Figures/geek-poke-build1}
+&
+\hspace*{-1.8cm}\includegraphics[width=2.2in]{Figures/geek-poke-build2}
+\end{tabular}
+
+
+
+\NOTE{\ }
+
+\end{frame}
+
+%SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS
+\section{Qu'est-ce que l'assemblage de logiciels?}
+%SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS
+
+%------------------------------------------------
+\begin{frame}
+\frametitle{Qu'est-ce que l'assemblage d'un logiciel?}
+
+\begin{quote}
+Historically, \alert{build} has often referred either to the process
+of \alert{converting source code files into standalone software artifact(s)}
+that can be run on a computer, or the result of doing so.
+
+\bigskip
+
+The process of building a computer program is usually managed by a
+\alert{build tool}, a program that coordinates and controls other
+programs. [\ldots] \alert{The build utility needs to compile and link the
+various files, \underline{in the correct order}}. If the source code in a
+particular file has not changed then it may not need to be
+recompiled~[\ldots].
+\end{quote}
+
+\source{\url{https://en.wikipedia.org/wiki/Software_build}}
+
+
+\NOTE{\ }
+
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}
+\frametitle{Il faut distinguer entre \emph{composants sources} et
+\emph{composants d\'eriv\'es}}
+
+\begin{block}{Composants sources (\emph{source components})}
+Les composants qui sont --- et doivent \^etre --- cr\'e\'es
+\alert{manuellement} par les d\'eveloppeurs.
+\end{block}
+
+
+\bigskip
+
+\only<1>{\ \ }
+\only<2>{Exemple pour programmes C~: Fichiers \TT{*.[hc]}, \TT{Makefile}.}
+
+\VF
+
+\begin{block}{Composants d\'eriv\'es (\emph{derived components})}
+Les composants qui peuvent \^etre \'et\'e cr\'e\'es \alert{automatiquement} par
+la machine, sans l'intervention explicite des d\'eveloppeurs.
+
+\end{block}
+
+\bigskip
+
+\only<1>{\ \ \\\ \ } \only<2>{Exemple pour programmes C~: Fichiers
+\TT{*.o}, ex\'ecutables.}
+
+\VF
+
+\source{<<\emph{Essential Open Source Toolset}>>, Zeller \& Krinke}
+\NOTE{\ }
+
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}
+\frametitle{Il faut distinguer entre \emph{composants sources} et
+\emph{composants d\'eriv\'es}}
+
+\alert{Remarque importante en lien avec le contr\^ole du
+code source~:} 
+
+\begin{itemize}
+\bigskip
+
+\item Seuls les fichiers pour les composants \alert{sources} doivent
+\^etre mis dans le syst\`eme de contr\^ole du code source.
+
+\bigskip
+
+\Implique\ Les fichiers pour les composants d\'eriv\'es \alert{ne devraient pas
+\^etre mis} dans le syst\`eme de contr\^ole du code source.  
+
+\end{itemize}
+\VF
+
+\NOTEvide
+
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}
+\frametitle{Le r\^ole d'un outil d'assemblage de logiciels}
+
+Le r\^ole d'un outil d'assemblagee de logiciels est d'assurer qu'un
+logiciel soit assembl\'e\ldots
+
+\VF
+
+\begin{itemize}
+\item \alert{\`a partir des bons composants sources}
+
+\VF
+
+\item \alert{toujours de la bonne fa\c{c}on}
+
+\VF
+
+\item \alert{sans intervention humaine}
+
+\VF
+
+\item \alert{rapidement} --- par ex., en reg\'en\'erant
+le nombre \alert{minimal} de composants d\'eriv\'es \Implique\ on ne
+recompile que le strict n\'ecessaire
+
+
+\VF
+
+\end{itemize}
+
+\NOTE{\ }
+
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}
+\frametitle{Tous les outils d'assemblage reposent sur un mod\`ele du logiciel \`a
+construire\Implique\ \AlertTitle{Graphe des d\'ependances}}
+
+\begin{center}
+\includegraphics[width=11cm]{Figures/graphe-dependances}
+
+\end{center}
+
+\NOTE{
+L\'egende~:
+\begin{Items}
+\item Boite avec lignes plus \'epaisses~: composants sources 
+\item Boite avec lignes plus minces~: composants d\'eriv\'es 
+\end{Items}
+}
+
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}
+\frametitle{Le processus d'assemblage repose sur l'analyse du graphe
+de d\'ependances}
+
+Soit un composant d\'eriv\'e $A$ qui d\'epend de $A_1$, $A_2$, \ldots,
+$A_n$.
+
+
+\bigskip
+
+Alors, le composant \alert{$A$ doit \^etre reg\'en\'er\'e} si une des
+conditions suivantes s'applique~:
+\begin{enumerate}
+\item $A$ n'existe pas
+
+\item un des composants $A_i$ a \'et\'e modifi\'e
+
+\item un des composants $A_i$ doit \^etre reg\'en\'er\'e
+
+\end{enumerate}
+
+\VF
+
+\alert{Donc~: } il s'agit donc d'un processus \alert{r\'ecursif}!
+
+\source{<<\emph{Essential Open Source Toolset}>>, Zeller \& Krinke}
+
+\NOTE{\ }
+
+\end{frame}
+
+\section{Quelques outils d'assemblage de logiciels}
+
+%SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS
+\Subsection{L'outil \TT{make} sur Unix}
+%SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS
+
+\input{build_outil-make}
+
+
+%SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS
+\Subsection{L'outil \TT{Ant}}
+%SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS
+
+\input{build_outil-ant}
+
+%SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS
+\Subsection{L'outil \TT{Maven}}
+%SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS
+
+\input{build_outil-maven}
+
+
+%SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS
+\Subsection{L'outil \TT{Rake}}
+%SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS
+
+\input{build_outil-rake}
+
+%SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS
+\section{Conclusion}
+%SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS
+
+%------------------------------------------------
+\begin{frame}
+\frametitle{Tableau synth\'etique comparant \TT{make}, \TT{ANT} et \TT{Maven}}
+
+\hspace*{-0.95cm}\includegraphics[width=13cm]{Figures/make-ant-maven}
+
+\VF
+
+\Source{<<The Evolution of {Java} Build Systems>>, McIntosh et al.}
+
+
+\NOTE{\ }
+
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}
+\frametitle{La maintenance des scripts d'assemblage peut
+demander un effort non-n\'egligeable \frownie}
+
+Certaines \'etudes ont montr\'e que, en moyenne, la conception et
+l'entretien du syst\`eme de \emph{build} pouvaient entrainer des
+\alert{surco\^uts} (\emph{overhead}) de l'ordre de 10~\%.
+
+\pause
+
+\VF
+
+\begin{itemize}
+\item Ajouter de nouvelles r\`egles pour traiter des nouveaux fichiers
+sources
+
+\item Ajuster la configuration du compilateur ou de l'\'editeur de
+liens
+
+\item \ldots
+\end{itemize}
+
+\VF
+
+\Source{Article cit\'e dans <<The Evolution of {Java} Build Systems>>,
+McIntosh et al.}
+
+\VF
+\NOTE{\ }
+
+\end{frame}
+
+
+%------------------------------------------------
+\begin{frame}
+\frametitle{Tous les outils d'assemblage utilisent un DSL}
+
+\begin{block}{DSL = \emph{Domain Specific Language}}
+\begin{quote}
+
+A computer \alert{programming language} of
+\Alert{orange}{limited expres\-siveness} focused on a
+\Alert{magenta}{particular domain}.
+
+\bigskip
+
+\source{<<\emph{Domain-Specific Languages}>>, Fowler}
+\end{quote}
+\end{block}
+
+\VF
+
+
+\NOTE{\ }
+
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}
+\frametitle{Tous les outils d'assemblage utilisent un DSL}
+
+\begin{block}{DSL Externe}
+\begin{quote}
+<<An \alert{external DSL} is a completely separate language, for which
+you [need] a full parser.>>
+\end{quote}
+\end{block}
+
+\VF
+
+\begin{block}{DSL Interne}
+\begin{quote}
+<<An \alert{internal DSL} is an idiomatic way of using a
+general-purpose language.>>
+\end{quote}
+
+\end{block}
+
+
+\VF
+
+
+\NOTE{\ }
+
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}
+\frametitle{Outils de \emph{build} et DSL}
+
+\begin{center}
+\begin{tabular}{||l|l|l||}\hline\hline
+{\bf Outil} & {\bf Type de DSL} & {\bf Syntaxe}\\\hline\hline
+Make & Externe &  \emph{Ad hoc}\\\hline
+Ant & Externe &  XML\\\hline
+Maven & Externe &  XML\\\hline
+Rake & \alert{Interne} &  \alert{Ruby}\\\hline\hline
+\end{tabular}
+\end{center}
+
+\NOTE{\ }
+
+\end{frame}
+
+
+%------------------------------------------------
+\begin{frame}
+\frametitle{R\'ef\'erences}
+
+\nocite{HuntTho00}
+\nocite{SubramaniamHun06}
+\nocite{Rasmusson10}
+\nocite{HumbleFar11}
+\nocite{ZellerKri05}
+\nocite{Koleshko14}
+\nocite{Fowler11}
+\nocite{McintoshHadHas12}
+
+\bibliographystyle{alpha}
+
+\vspace{-0.25cm}
+
+{\tiny
+\bibliography{%
+biblio/design%
+,%
+biblio/varia%
+,%
+biblio/comp%
+,%
+biblio/arch+pp%
+}
+}
+
+\NOTEvide
+
+
+\end{frame}
+
+\end{document}

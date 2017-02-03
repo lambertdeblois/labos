@@ -1,0 +1,67 @@
+\input{preamble}
+
+% Pour bac.
+\newcommand{\BAC}[1]{#1}
+\newcommand{\MAITRISE}[1]{}
+% Pour maitrise
+\renewcommand{\BAC}[1]{}
+\renewcommand{\MAITRISE}{}
+
+\author[Guy Tremblay, D\'epartement d'informatique]
+{Guy Tremblay\\Professeur}
+
+\institute{D\'epartement
+d'informatique\\UQAM\\\url{http://www.labunix.uqam.ca/~tremblay}}
+
+\date{22--29 octobre 2015}
+\title{Langages sp\'ecifiques au domaine}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+%\SEULEMENT{dsl_exemple-documents-java}
+
+
+%------------------------------------------------
+\begin{frame}
+\frametitle{MGL7460 --- Automne 2015}
+\titlepage
+\NOTE{\ }
+\end{frame}
+
+\begin{frame}
+\frametitle{Contenu}
+\small
+\tableofcontents
+\NOTE{\ }
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Introduction}
+\input{dsl_intro}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Qu'est-ce qu'un <<Langage Sp\'ecifique au Domaine>>?}
+\input{dsl_defn}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Des DSL internes pour sp\'ecifier des documents <<\`a la XML>>}
+\input{dsl_exemple-documents}
+\input{dsl_exemple-documents-java}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Un exemple~: Un \emph{gem} pour sp\'ecifier des suites de commandes}
+\input{dsl_exemple-gli}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Un exemple C++~: Configuration de programmes parall\`eles} \input{dsl_exemple-fastflow}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Conclusion}
+\input{dsl_conclusion}
+
+\end{document}
+

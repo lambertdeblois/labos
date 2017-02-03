@@ -1,0 +1,699 @@
+%--------------------------------------------
+\begin{frame}
+\frametitle{Qu'est-ce qu'un \emph{Langage Sp\'ecifique au Domaine} (DSL)?}
+
+
+\large\Alert{blue}{\bf Domain-specific language}:
+
+\begin{quote}
+
+A computer \alert{programming language} of
+\Alert{orange}{limited expres\-siveness} focused on a
+\Alert{magenta}{particular domain}.
+
+\bigskip
+
+\rSource{M. Fowler, 2011}
+
+
+\end{quote}
+
+\bigskip
+\vfill
+\bigskip
+
+\begin{columns}[b]
+\begin{column}{5cm}
+{\hspace{5cm}\includegraphics[width=3cm]{Figures/livre-fowler}}
+\end{column}
+
+\begin{column}{4cm}
+%{\hspace{5cm}\includegraphics[width=3cm]{Figures/fowler}}
+\end{column}
+
+\end{columns}
+
+
+\NOTE{Programming language \Implique\ A language used by humans to
+program computers}
+
+\NOTE{Limited expressiveness \Implique\ Not \emph{turing-complete},
+not a GPL (General Purpose Language) like C, Java, Ruby, etc.}
+
+\NOTE{Particular domain \Implique\ Tied to a specific application
+domain---a specific problem area---so it (generally) uses concepts
+from that application domain.}
+
+\end{frame}
+
+
+%--------------------------------------------
+\begin{frame}
+\frametitle{Qu'est-ce qu'un \emph{Langage Sp\'ecifique au Domaine} (DSL)?}
+
+
+\large\Alert{blue}{\bf Domain-specific language}:
+
+\begin{quote}
+
+A language offering \alert{expressive power focused on a
+	particular problem domain}, such as a specific class of
+	applications or \Alert{dgreen}{application aspect}.
+
+\bigskip
+
+\rSource{K. Czarnecki, 2005}
+
+\end{quote}
+
+\NOTE{Expressiveness is limited with respect to Turing-complete/GPL.
+However, in the domain for which it is defined, it is \alert{very
+expressive}: ``DSLs trade generality for expressiveness in a limited
+domain.'' \cite{MernikHeeSlo05} }
+
+
+\end{frame}
+
+
+
+%--------------------------------------------
+\begin{frame}
+\frametitle{Qu'est-ce qu'un \emph{Langage Sp\'ecifique au Domaine} (DSL)?}
+
+\large\Alert{blue}{\bf Domain-specific language}:
+
+\begin{quote}
+A ``little language'', commonly known as a ``domain-specific
+language'' (DSL), is a language that is \alert{expressive uniquely
+over the specific features of programs in a given problem domain.}
+
+\bigskip
+
+\rSource{A. Yepez, 2010}
+\end{quote}
+
+\NOTEvide
+
+\end{frame}
+
+
+%------------------------------------------------
+\begin{frame}
+\frametitle{Un DSL vise \`a r\'eduire le <<foss\'e
+s\'emantique>>}
+\framesubtitle{Le foss\'e entre id\'ees de l'usager et leur expression
+dans un programme}
+
+\hspace*{0.4cm}\includegraphics[width=8.5cm]{Figures/semantic-gap}
+
+\NOTE{\ }
+
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}
+\frametitle{Un DSL vise \`a r\'eduire le <<foss\'e
+s\'emantique>>}
+\framesubtitle{Le foss\'e entre id\'ees de l'usager et leur expression
+dans un programme}
+
+\hspace*{0.4cm}\includegraphics[width=8.5cm]{Figures/semantic-gap-2}
+
+\NOTE{\ }
+
+\end{frame}
+
+
+
+%------------------------------------------------
+\begin{frame}
+\frametitle{Un DSL utilise le langage du domaine d'application}
+
+
+\vspace{-0.3cm}
+
+\includegraphics[width=11cm]{Figures/problem-DSL-solution}
+
+\bigskip
+
+\rsource{``DSLs in Action'', D.~Ghosh, 2011}
+
+
+\NOTE{Problem domain: Process, entities, constraints part of the
+business being analyzed}
+
+\NOTE{Solution domain: Implementation aspects involving computer
+science and software engineering tools and techniques}
+
+\NOTE{Problem domain[:] ``all information that defines the problem and
+constrains the solution (the constraints being part of the problem).
+It includes the goals that the problem owner wishes to achieve, the
+context within which the problem exists, and all rules that define
+essential functions or other aspects of any solution product.''
+
+Source~: {\url{http://c2.com/cgi/wiki?ProblemDomain}}
+}
+
+\NOTE{Common vocabulary et \emph{ubiquituous language} de Evans!}
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\Subsection{Quelques exemples de DSLs}
+\input{dsl_exemples}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\Subsection{Pourquoi utiliser des DSLs?}
+
+
+%------------------------------------------------
+\begin{frame}
+\frametitle{Un DSL permet un meilleur niveau d'abstraction}
+
+\begin{columns}[b]
+
+
+\begin{column}{7cm}
+{\hspace{-0.5cm}\includegraphics[width=7.2cm]{Figures/abstraction-2}}
+\end{column}
+
+\begin{column}{3cm}
+
+\source{\url{geek-and-poke.com}}
+\end{column}
+\end{columns}
+
+\NOTE{A DSL provides high level abstractions that match the level of
+abstraction of the application domain.}
+
+\NOTE{Having a well-designed DSL often leads to a better separation
+between the domain rules and the technical code implementing those
+rules:  \alert{technical implementation details should not be present} in
+the DSL script.}
+
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}
+\frametitle{Un DSL est un langage plus expressif}
+
+{\hspace{-0.5cm}\includegraphics[width=7.5cm]{Figures/expressiveness-1}}
+
+\NOTE{A DSL provides a very expressive language, again because it
+matches the concepts of the application domain}
+
+\NOTE{High level abstractions combined with expressiveness lead to
+\alert{conciseness}, thus to better \alert{productivity}}
+
+
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}
+\frametitle{Un DSL facilite la comunication avec les experts du domaine}
+
+
+\vspace{-0.2cm}
+
+{\hspace{-0.5cm}\includegraphics[width=7.4cm]{Figures/expert-1}}
+
+\NOTE{Expressiveness with respect to the application domain also means
+that a DSL script should be easier to read than a script in a regular
+programming language. This should thus \alert{improve the communication with
+the domain experts}.}
+
+\NOTE{In fact, a DSL allows domain experts to be involved in the
+specification of the business rules. Requiring those domain experts to
+be able to \alert{write} using the DSL might be a bit ``too much to
+ask'', but at least they should be able to easily \alert{read} them,
+and possibly (?) modify them.}
+
+\end{frame}
+
+
+
+%------------------------------------------------
+\begin{frame}
+\frametitle{D\'esavantages des DSLs}
+
+\begin{block}{}
+$\bullet$ Concevoir un langage est difficile: 
+
+\hspace*{1cm} \underline{\alert{\Large D}}SL \Implique\
+Connaissance du \alert{\underline{\Large D}omain}e
+\end{block}
+
+\vfill
+
+\begin{block}{}
+$\bullet$ Un autre langage (nouveau) \`a apprendre
+\end{block}
+
+
+\vfill
+
+\begin{block}{}
+$\bullet$ Une autre couche logicielle
+\end{block}
+
+
+\vfill
+
+\NOTE{Another layer \Implique\ There might be performance concerns in
+the case of an internal DSL, since such DSL are generally implemented
+using scripting (non-compiled) languages. However, as for any other
+program and software, optimization should be a concern only when we can know
+if/where there is indeed a problem.}
+
+\NOTE{As Don Knuth wrote: ``We should forget about small
+efficiencies, say about 97\% of the time: \alert{premature
+optimization is the root of all evil}''}
+
+\end{frame}
+
+
+% SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS
+\Subsection{Diff\'erentes sortes de DSLs}
+
+%------------------------------------------------
+\begin{frame}
+\frametitle{DSL externe vs.\ DSL interne:\\Caract\'erisation de Fowler}
+
+\
+
+\begin{block}{DSL externe}
+\begin{quote}
+``An \alert{external DSL} is a completely separate language, for which
+you [need] a full parser.''
+
+\medskip
+
+\rSource{Fowler, 2009}
+\end{quote}
+\end{block}
+
+\vfill
+
+\begin{block}{DSL interne}
+\begin{quote}
+An \alert{internal DSL} is an
+idiomatic way of using a general-purpose language.''
+
+\medskip
+
+\rSource{Fowler, 2009}
+
+\end{quote}
+\end{block}
+
+\vfill
+
+\NOTE{\ }
+
+\end{frame}
+
+%--------------------------------------------
+\begin{frame}[plain]
+\includegraphics[width=11cm]{Figures/internal-vs-external-0}
+
+\NOTE{External vs. internal:
+\begin{itemize}
+
+\item External: the language is distinct from the language used to
+develop the application, so an independent parser/interpreter must be
+built---using the usual/typical tools (e.g., lexer/parser generator
+such as lex/yacc, flex/bison, antlr, etc.)
+
+\item Internal: is a ``sublanguage'' of the language used to develop
+the application, i.e., it ``uses'' the infrastructure of an existing
+programming language (called the host language). In other words, it is
+implemented ``\alert{on top of}'' an existing programming language, so
+it must obey the constraints (syntax, semantics) of the host language.
+\end{itemize}
+}
+
+\end{frame}
+
+%--------------------------------------------
+\begin{frame}[plain]
+\includegraphics[width=11cm]{Figures/internal-vs-external-1}
+\NOTE{\ }
+\end{frame}
+
+
+
+%------------------------------------------------
+\begin{frame}
+\frametitle{DSL externe vs.\ DSL interne~:\\Exemples}
+
+
+\begin{columns}
+\begin{column}{5cm}
+\begin{block}{{DSL Externes}}
+\begin{itemize}
+\item HTML
+\item CSS
+\item Graphviz
+\item Make
+\item Ant
+\end{itemize}
+\end{block}
+\end{column}
+
+\begin{column}{5cm}
+\begin{block}{{DSL Internes}}
+\begin{itemize}
+\item Rake
+\item Gli
+\item RSpec
+\item Scripts de correction Oto
+\end{itemize}
+\end{block}
+\end{column}
+\end{columns}
+
+\vfill
+
+\NOTE{\ }
+
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}
+\frametitle{DSL autonome vs.\ DSL fragmentaire~:\\Caract\'erisation de Fowler}
+
+
+
+\begin{block}{DSL autonome}
+\begin{quote}
+``[A stand-alone DSL is used through a] DSL script, typically in a
+single file, and \alert{it is all DSL}.''
+\medskip
+
+\rSource{Fowler, 2009}
+\end{quote}
+\end{block}
+
+\vfill
+
+\begin{block}{DSL fragmentaire}
+\begin{quote}
+\item ``[With a fragmentary DSL,] \alert{little bits of DSL} are used
+\alert{inside} the host language code. You can think of them as
+\alert{enhancing the host language} with additionnal features.''
+
+\medskip
+
+\rSource{Fowler, 2009}
+
+\end{quote}
+\end{block}
+
+\vfill
+
+
+\NOTE{\ }
+
+\end{frame}
+
+
+%------------------------------------------------
+\begin{frame}[plain]
+\frametitle{DSL autonome vs.\ DSL fragmentaire}
+
+\includegraphics[width=12cm]{Figures/standalone-vs-fragmentary-1}
+
+\NOTE{Stand-alone: 
+
+\begin{itemize}
+
+\item ``[Used through a] DSL script, typically in a single file, and
+\alert{it is all DSL}.''
+
+\item ``In this case, you could/should follow what the DSL is doing
+without understanding the host language.''
+\end{itemize}
+}
+
+\NOTE{Fragmentary:
+\begin{itemize}
+\item ``\alert{Little bits of DSL} are used \alert{inside} the host language
+code. You can think of them as \alert{enhancing the host language}
+with additionnal features.''
+
+\item ``In this case, you can't really follow what the DSL is doing
+without understanding the host language.''
+\end{itemize}
+}
+
+\end{frame}
+
+
+%------------------------------------------------
+\begin{frame}
+\frametitle{DSL autonome vs.\ DSL fragmentaire~:\\Exemples}
+
+\begin{columns}
+\begin{column}{5cm}
+\begin{block}{{DSL Autonomes}}
+\begin{itemize}
+\item HTML
+\item CSS
+\item graphviz
+\item Make
+\item Ant
+\item Rake
+\item Scripts de correction Oto
+\end{itemize}	
+\end{block}
+\end{column}
+
+\begin{column}{5cm}
+\begin{block}{{DSL Fragmentaires}}
+\begin{itemize}
+\item Gli
+\item Expressions r\'eguli\`eres
+\item SQL enchass\'e
+\end{itemize}
+\end{block}
+\end{column}
+\end{columns}
+
+\NOTE{\ }
+
+\end{frame}
+
+
+%------------------------------------------------
+\begin{frame}
+\frametitle{DSL applicatif vs. DSL utilitaire~:\\Caract\'erisation de
+Voelter}
+
+\begin{block}{\em Application domain DSL}
+\em [These] DSLs describe the \alert{core business logic of an application system}
+independent of its technical implementation.  These DSLs are intended
+\alert{to be used by domain experts, usually non-programmers}. 
+\end{block}
+
+\VF
+
+\begin{block}{\em Utility DSL}
+\em [These] DSLs [act] simply \Alert{blue}{as utilities for developers}. A
+developer, or a small team of developers, creates a small DSL that
+\Alert{blue}{automates a specific}, usually \Alert{blue}{well-bounded aspect of
+software development}.
+\end{block}
+
+\VF
+
+\source{<<DSL Engineering: Designing, Implementing and Using
+Domain-Specific Languages>>, Voelter}
+
+\NOTE{Contrainte sur les DSLs applicatifs, puisqu'utilis\'es par des
+non-programmeurs~: <<\emph{more stringent requirements regarding
+notation, ease of use and tool support.}>>}
+
+\NOTE{Avec un DSL utilitaire~: <<The overall development process is
+not based on DSLs, \Alert{blue}{it's a few developers being creative
+and simplifying their own lives}.>>}
+
+
+
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}
+\frametitle{Les diff\'erentes cat\'egories~: Exemples}
+
+\begin{block}{}
+{\large
+\begin{center}
+\begin{tabular}{l||p{3cm}|p{3cm}|}
+ & {\bf \Alert{maincolor}{Externes}} & {\bf \Alert{maincolor}{Internes}} 
+\\\hline\cline{2-3}
+{\bf \Alert{maincolor}{Autonomes}} 
+   & HTML & \Alert{blue}{Rake}
+\\
+  & CSS & 
+\\
+   & \Alert{blue}{Make} & 
+\\
+   & \Alert{blue}{Ant} & 
+\\
+   & {Graphviz} & 
+\\
+   & {\LaTeX} & 
+\\
+   & \ldots & Scripts Oto
+\\\hline
+{\bf \Alert{maincolor}{Fragmentaires}} 
+   & SQL enchass\'e & \Alert{blue}{Gli}
+\\
+   & & \Alert{blue}{RSpec}
+\\
+   & & 
+\\\cline{2-3}
+\end{tabular}
+
+\end{center}
+}
+\end{block}
+
+L\'egende~: \Alert{blue}{Utilitaire}
+
+\NOTE{\ }
+
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Mise en oeuvre des DSLs}
+
+\Subsection{Mise en oeuvre des DSLs externes}
+
+%------------------------------------------------
+\begin{frame}
+\frametitle{Mise en oeuvre <<classique>> d'un DSL externe}
+
+\vfill
+{\hspace*{-0.5cm}\includegraphics[width=12cm]{Figures/dsl-externe-2}}
+
+\vfill
+
+
+\NOTE{\ }
+
+\end{frame}
+
+
+%------------------------------------------------
+\begin{frame}
+\frametitle{Mise en oeuvre <<classique>> d'un DSL externe}
+
+\vfill
+{\hspace*{-0.5cm}\includegraphics[width=12cm]{Figures/dsl-externe-1}}
+
+\vfill
+
+
+\NOTE{\ }
+
+\end{frame}
+
+
+
+%------------------------------------------------
+\begin{frame}
+\frametitle{Mise en oeuvre <<classique>> d'un DSL externe}
+
+\vfill
+{\hspace*{-0.5cm}\includegraphics[width=12cm]{Figures/dsl-externe-0}}
+
+\vfill
+
+
+\NOTE{\ }
+
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}
+\frametitle{Mise en oeuvre <<classique>> d'un DSL externe}
+
+\vfill
+{\hspace*{-0.5cm}\includegraphics[width=12cm]{Figures/dsl-externe-00}}
+
+\vfill
+
+
+\NOTE{\ }
+
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}
+\frametitle{Plus r\'ecemment, on a vu apparaitre des \emph{language workbenches}}
+
+\begin{quote}
+A \alert{Language Workbench} (LWB) is a development toolset that facilitates
+the development and editing of domain specific languages (DSLs). 
+
+\bigskip
+
+\source{\url{http://searchsoftwarequality.techtarget.com/definition/Language-Workbench}}
+\end{quote}
+
+\vfill
+\NOTE{\ }
+
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}
+\frametitle{Plus r\'ecemment, on a vu apparaitre des \emph{language workbenches}}
+
+\vspace*{-0.6cm}
+
+\begin{center}
+{\includegraphics[width=8.5cm]{Figures/language-workbench-2}}
+\end{center}
+
+\vfill
+
+\NOTE{\source{\url{http://ptgmedia.pearsoncmg.com/images/RCexcerpt_fowler_dsl1/elementLinks/01fig07.jpg}}}
+
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}
+\frametitle{Plus r\'ecemment, on a vu apparaitre des \emph{language workbenches}}
+
+{\hspace*{-0.5cm}\includegraphics[width=12cm]{Figures/language-workbench}}
+
+\vfill
+
+\NOTE{\source{\url{http://www.martinfowler.com/articles/languageWorkbench.html}}}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\Subsection{Mise en oeuvre des DSLs internes}
+
+%------------------------------------------------
+\begin{frame}
+\frametitle{Techniques de mises en oeuvre de DSLs internes}
+
+\huge Voir sections suivantes\ldots
+
+
+\NOTE{\ }
+
+\end{frame}

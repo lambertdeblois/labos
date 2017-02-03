@@ -1,0 +1,16 @@
+** Appel a diff ordinaire: on devrait voir des differences
+1,2c1,2
+< abc 
+<    def  fddfdf  
+---
+> abc
+>    def  fddfdf
+4c4
+< x       
+---
+> x
+6c6
+< x           
+---
+> x
+** Appel a diff en ignorant les blancs: on ne devrait pas voir de differences
