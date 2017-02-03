@@ -1,0 +1,8 @@
+
+        Client numero 0067
+
+                        No de produit    Qte     Prix       Total (tx)
+        
+        Produit #1          RTU43245      35        69.99              2803.62
+
+        
