@@ -1,0 +1,17 @@
+./Fichiers/n1.sh
+function usage {
+    echo "usage"
+}
+./num.sh
+function usage {
+    echo "usage: "
+    echo "  $0 [-k] fichier"
+    echo "  Avec k > 0"
+    exit 1
+}
+./tf.sh
+function usage {
+    echo "usage:"
+    echo "$0 nomDeFonction [fichier]"
+    exit 1
+}

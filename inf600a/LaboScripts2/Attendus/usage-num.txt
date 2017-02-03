@@ -1,0 +1,3 @@
+usage: 
+  ./num.sh [-k] fichier
+  Avec k > 0
