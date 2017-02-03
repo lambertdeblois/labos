@@ -1,0 +1,178 @@
+01/01/16 | 10:02:44 | lister_boites nkambou_r
+01/01/16 | 10:02:57 | confirmer_remise nkambou_r INF2160-TP2 PIRV11026606
+01/01/16 | 10:03:07 | lister_boites nkambou_r
+01/01/16 | 10:03:18 | confirmer_remise nkambou_r Atelier12 PIRV11026606
+01/01/16 | 10:03:22 | lister_boites nkambou_r
+01/01/16 | 10:03:27 | confirmer_remise nkambou_r INF2160-TP1 PIRV11026606
+01/01/16 | 10:03:27 | lister_boites nkambou_r
+01/01/16 | 10:03:44 | confirmer_remise nkambou_r INF2160-TP2 PIRV11026606
+01/01/16 | 10:03:44 | confirmer_remise nkambou_r INF2160-TP2 PIRV11026606
+01/01/16 | 10:04:15 | lister_boites nkambou_r
+01/01/16 | 10:04:21 | confirmer_remise nkambou_r Atelier7 PIRV11026606
+04/01/16 | 11:27:44 | lister_boites laforest_l
+04/01/16 | 11:27:53 | prendre_tp INF4100
+04/01/16 | 11:44:31 | lister_boites laforest_l
+04/01/16 | 11:44:33 | decrire_boite INF4100
+04/01/16 | 11:44:41 | lister_boites laforest_l
+04/01/16 | 11:44:47 | detruire_boite INF4100
+04/01/16 | 11:44:51 | lister_boites laforest_l
+05/01/16 | 14:49:42 | lister_boites descheneauxc
+08/01/16 | 14:47:10 | lister_boites tremblay_gu
+08/01/16 | 14:47:25 | rendre_tp tremblay_gu INF5171 TREG05065801 .tmpOtoWeb/enonce.tex
+08/01/16 | 14:47:25 | confirmer_remise tremblay_gu INF5171 TREG05065801
+08/01/16 | 14:47:28 | lister_boites tremblay_gu
+08/01/16 | 14:47:30 | confirmer_remise tremblay_gu INF5171 TREG05065801
+08/01/16 | 14:47:46 | lister_boites tremblay_gu
+08/01/16 | 14:47:48 | prendre_tp INF5171
+08/01/16 | 14:50:51 | lister_boites tremblay_gu
+08/01/16 | 14:50:56 | detruire_boite INF5171
+08/01/16 | 14:50:57 | lister_boites tremblay_gu
+08/01/16 | 14:52:23 | decrire_boite INF5171
+08/01/16 | 14:52:28 | prendre_tp INF5171
+08/01/16 | 14:52:40 | decrire_boite INF5171
+08/01/16 | 14:53:05 | prendre_tp INF5171
+08/01/16 | 14:53:13 | decrire_boite INF5171
+08/01/16 | 14:53:31 | prendre_tp INF5171
+08/01/16 | 14:53:44 | decrire_boite INF5171
+08/01/16 | 14:54:12 | lister_boites tremblay_gu
+08/01/16 | 14:54:16 | detruire_boite --detruire_travaux INF5171
+08/01/16 | 14:54:20 | lister_boites tremblay_gu
+08/01/16 | 14:54:23 | decrire_boite INF5171
+08/01/16 | 14:56:41 | lister_boites tremblay_gu
+08/01/16 | 14:56:46 | creer_boite --avec_code_permanent bh
+08/01/16 | 14:56:48 | lister_boites tremblay_gu
+08/01/16 | 14:56:49 | lister_boites tremblay_gu
+08/01/16 | 14:56:52 | decrire_boite bh
+08/01/16 | 14:56:53 | lister_boites tremblay_gu
+08/01/16 | 14:56:56 | detruire_boite bh
+08/01/16 | 14:57:00 | lister_boites tremblay_gu
+08/01/16 | 14:59:19 | creer_boite --avec_code_permanent boite1b202731452283174
+08/01/16 | 14:59:20 | creer_boite --avec_code_permanent boite2b202731452283174
+08/01/16 | 14:59:21 | creer_boite --avec_code_permanent boite3b202731452283175
+08/01/16 | 14:59:21 | lister_boites tremblay_gu
+08/01/16 | 14:59:22 | detruire_boite boite2b202731452283174
+08/01/16 | 14:59:22 | lister_boites tremblay_gu
+08/01/16 | 14:59:23 | detruire_boite boite3b202731452283175
+08/01/16 | 14:59:23 | lister_boites tremblay_gu
+08/01/16 | 14:59:24 | detruire_boite boite1b202731452283174
+08/01/16 | 14:59:26 | creer_boite --avec_code_permanent b202731452283180
+08/01/16 | 14:59:26 | lister_boites tremblay_gu
+08/01/16 | 14:59:27 | detruire_boite b202731452283180
+08/01/16 | 14:59:29 | creer_boite --avec_code_permanent --avec_liste_exacte=(foo.txt,bar.txt) b202731452283183
+08/01/16 | 14:59:29 | lister_boites tremblay_gu
+08/01/16 | 14:59:30 | decrire_boite b202731452283183
+08/01/16 | 14:59:30 | lister_boites tremblay_gu
+08/01/16 | 14:59:31 | detruire_boite b202731452283183
+08/01/16 | 14:59:33 | creer_boite --avec_code_permanent --avec_liste_exacte=(Labo7.java) b202731452283187
+08/01/16 | 14:59:34 | lister_boites tremblay_gu
+08/01/16 | 14:59:35 | rendre_tp tremblay_gu b202731452283187 TREG05065801 .tmpOtoWeb/Labo71.oto
+08/01/16 | 14:59:37 | lister_boites tremblay_gu
+08/01/16 | 14:59:38 | detruire_boite --detruire_travaux b202731452283187
+08/01/16 | 14:59:40 | creer_boite --avec_code_permanent --avec_liste_exacte=(Labo7.java) b202731452283194
+08/01/16 | 14:59:42 | lister_boites tremblay_gu
+08/01/16 | 14:59:44 | lister_boites tremblay_gu
+08/01/16 | 14:59:44 | detruire_boite --detruire_travaux b202731452283194
+08/01/16 | 14:59:46 | creer_boite --avec_code_permanent --avec_liste_exacte=(Labo7.java,Labo71.oto) b202731452283200
+08/01/16 | 14:59:48 | lister_boites tremblay_gu
+08/01/16 | 14:59:50 | rendre_tp tremblay_gu b202731452283200 TREG05065801,ABCD11111111 .tmpOtoWeb/Labo7.java .tmpOtoWeb/Labo71.oto
+08/01/16 | 14:59:50 | confirmer_remise tremblay_gu b202731452283200 TREG05065801,ABCD11111111
+08/01/16 | 14:59:51 | lister_boites tremblay_gu
+08/01/16 | 14:59:51 | lister_boites tremblay_gu
+08/01/16 | 14:59:52 | confirmer_remise tremblay_gu b202731452283200 TREG05065801,ABCD11111111
+08/01/16 | 14:59:52 | lister_boites tremblay_gu
+08/01/16 | 14:59:52 | lister_boites tremblay_gu
+08/01/16 | 14:59:53 | rendre_tp tremblay_gu b202731452283200 TREG05065801,ABCD11111111 .tmpOtoWeb/Labo7.java .tmpOtoWeb/Labo71.oto
+08/01/16 | 14:59:54 | confirmer_remise tremblay_gu b202731452283200 TREG05065801,ABCD11111111
+08/01/16 | 14:59:54 | lister_boites tremblay_gu
+08/01/16 | 14:59:54 | lister_boites tremblay_gu
+08/01/16 | 14:59:55 | confirmer_remise tremblay_gu b202731452283200 TREG05065801,ABCD11111111
+08/01/16 | 14:59:57 | lister_boites tremblay_gu
+08/01/16 | 14:59:58 | detruire_boite --detruire_travaux b202731452283200
+08/01/16 | 15:00:00 | creer_boite --avec_code_permanent --avec_liste_exacte=(Labo7.java) b202731452283214
+08/01/16 | 15:00:02 | lister_boites tremblay_gu
+08/01/16 | 15:00:03 | rendre_tp tremblay_gu b202731452283214 TREG05065801 .tmpOtoWeb/Labo7.java
+08/01/16 | 15:00:03 | confirmer_remise tremblay_gu b202731452283214 TREG05065801
+08/01/16 | 15:00:06 | lister_boites tremblay_gu
+08/01/16 | 15:00:06 | detruire_boite --detruire_travaux b202731452283214
+08/01/16 | 15:00:11 | tester_classe Compteur.java tests-labo-compteur.txt
+08/01/16 | 15:00:18 | tester_filtre --interactif Labo51.java tests-labo51-interactif.txt Clavier.java MessagesLabo51.java
+08/01/16 | 15:00:23 | tester_filtre --interactif Labo51PasOk.java tests-labo51-interactif.txt Clavier.java MessagesLabo51.java
+08/01/16 | 15:00:27 | tester_methodes Labo7.java tests-labo71.txt
+08/01/16 | 15:00:33 | activer_eval --public verif202731452283247 .tmpOtoWeb/Labo51.oto .tmpOtoWeb/tests-labo51.txt .tmpOtoWeb/Clavier.java .tmpOtoWeb/MessagesLabo51.java
+08/01/16 | 15:00:35 | lister_evaluations tremblay_gu
+08/01/16 | 15:00:36 | verifier_tp tremblay_gu verif202731452283247 .tmpOtoWeb/Labo51.java
+08/01/16 | 15:00:39 | lister_evaluations tremblay_gu
+08/01/16 | 15:00:40 | desactiver_eval --public verif202731452283247
+08/01/16 | 15:00:42 | activer_eval --public verif202731452283256 .tmpOtoWeb/Labo71.oto .tmpOtoWeb/tests-labo71.txt
+08/01/16 | 15:00:44 | lister_evaluations tremblay_gu
+08/01/16 | 15:00:45 | verifier_tp tremblay_gu verif202731452283256 .tmpOtoWeb/Labo7.java
+08/01/16 | 15:00:51 | lister_evaluations tremblay_gu
+08/01/16 | 15:00:51 | desactiver_eval --public verif202731452283256
+08/01/16 | 15:03:58 | creer_boite --avec_code_permanent boite1b209261452283452
+08/01/16 | 15:03:58 | creer_boite --avec_code_permanent boite2b209261452283453
+08/01/16 | 15:03:59 | creer_boite --avec_code_permanent boite3b209261452283453
+08/01/16 | 15:04:00 | lister_boites tremblay_gu
+08/01/16 | 15:04:00 | detruire_boite boite2b209261452283453
+08/01/16 | 15:04:01 | lister_boites tremblay_gu
+08/01/16 | 15:04:01 | detruire_boite boite3b209261452283453
+08/01/16 | 15:04:02 | lister_boites tremblay_gu
+08/01/16 | 15:04:02 | detruire_boite boite1b209261452283452
+08/01/16 | 15:04:04 | creer_boite --avec_code_permanent b209261452283458
+08/01/16 | 15:04:05 | lister_boites tremblay_gu
+08/01/16 | 15:04:05 | detruire_boite b209261452283458
+08/01/16 | 15:04:07 | creer_boite --avec_code_permanent --avec_liste_exacte=(foo.txt,bar.txt) b209261452283461
+08/01/16 | 15:04:08 | lister_boites tremblay_gu
+08/01/16 | 15:04:08 | decrire_boite b209261452283461
+08/01/16 | 15:04:09 | lister_boites tremblay_gu
+08/01/16 | 15:04:09 | detruire_boite b209261452283461
+08/01/16 | 15:04:11 | creer_boite --avec_code_permanent --avec_liste_exacte=(Labo7.java) b209261452283465
+08/01/16 | 15:04:13 | lister_boites tremblay_gu
+08/01/16 | 15:04:14 | rendre_tp tremblay_gu b209261452283465 TREG05065801 .tmpOtoWeb/Labo71.oto
+08/01/16 | 15:04:16 | lister_boites tremblay_gu
+08/01/16 | 15:04:16 | detruire_boite --detruire_travaux b209261452283465
+08/01/16 | 15:04:18 | creer_boite --avec_code_permanent --avec_liste_exacte=(Labo7.java) b209261452283472
+08/01/16 | 15:04:20 | lister_boites tremblay_gu
+08/01/16 | 15:04:22 | lister_boites tremblay_gu
+08/01/16 | 15:04:22 | detruire_boite --detruire_travaux b209261452283472
+08/01/16 | 15:04:24 | creer_boite --avec_code_permanent --avec_liste_exacte=(Labo7.java,Labo71.oto) b209261452283479
+08/01/16 | 15:04:26 | lister_boites tremblay_gu
+08/01/16 | 15:04:28 | rendre_tp tremblay_gu b209261452283479 TREG05065801,ABCD11111111 .tmpOtoWeb/Labo7.java .tmpOtoWeb/Labo71.oto
+08/01/16 | 15:04:28 | confirmer_remise tremblay_gu b209261452283479 TREG05065801,ABCD11111111
+08/01/16 | 15:04:29 | lister_boites tremblay_gu
+08/01/16 | 15:04:29 | lister_boites tremblay_gu
+08/01/16 | 15:04:29 | confirmer_remise tremblay_gu b209261452283479 TREG05065801,ABCD11111111
+08/01/16 | 15:04:30 | lister_boites tremblay_gu
+08/01/16 | 15:04:30 | lister_boites tremblay_gu
+08/01/16 | 15:04:31 | rendre_tp tremblay_gu b209261452283479 TREG05065801,ABCD11111111 .tmpOtoWeb/Labo7.java .tmpOtoWeb/Labo71.oto
+08/01/16 | 15:04:32 | confirmer_remise tremblay_gu b209261452283479 TREG05065801,ABCD11111111
+08/01/16 | 15:04:32 | lister_boites tremblay_gu
+08/01/16 | 15:04:32 | lister_boites tremblay_gu
+08/01/16 | 15:04:33 | confirmer_remise tremblay_gu b209261452283479 TREG05065801,ABCD11111111
+08/01/16 | 15:04:35 | lister_boites tremblay_gu
+08/01/16 | 15:04:36 | detruire_boite --detruire_travaux b209261452283479
+08/01/16 | 15:04:38 | creer_boite --avec_code_permanent --avec_liste_exacte=(Labo7.java) b209261452283492
+08/01/16 | 15:04:40 | lister_boites tremblay_gu
+08/01/16 | 15:04:41 | rendre_tp tremblay_gu b209261452283492 TREG05065801 .tmpOtoWeb/Labo7.java
+08/01/16 | 15:04:42 | confirmer_remise tremblay_gu b209261452283492 TREG05065801
+08/01/16 | 15:04:44 | lister_boites tremblay_gu
+08/01/16 | 15:04:44 | detruire_boite --detruire_travaux b209261452283492
+08/01/16 | 15:04:49 | tester_classe Compteur.java tests-labo-compteur.txt
+08/01/16 | 15:04:56 | tester_filtre --interactif Labo51.java tests-labo51-interactif.txt Clavier.java MessagesLabo51.java
+08/01/16 | 15:05:01 | tester_filtre --interactif Labo51PasOk.java tests-labo51-interactif.txt Clavier.java MessagesLabo51.java
+08/01/16 | 15:05:04 | tester_methodes Labo7.java tests-labo71.txt
+08/01/16 | 15:05:11 | activer_eval --public verif209261452283524 .tmpOtoWeb/Labo51.oto .tmpOtoWeb/tests-labo51.txt .tmpOtoWeb/Clavier.java .tmpOtoWeb/MessagesLabo51.java
+08/01/16 | 15:05:13 | lister_evaluations tremblay_gu
+08/01/16 | 15:05:14 | verifier_tp tremblay_gu verif209261452283524 .tmpOtoWeb/Labo51.java
+08/01/16 | 15:05:17 | lister_evaluations tremblay_gu
+08/01/16 | 15:05:17 | desactiver_eval --public verif209261452283524
+08/01/16 | 15:05:20 | activer_eval --public verif209261452283534 .tmpOtoWeb/Labo71.oto .tmpOtoWeb/tests-labo71.txt
+08/01/16 | 15:05:21 | lister_evaluations tremblay_gu
+08/01/16 | 15:05:22 | verifier_tp tremblay_gu verif209261452283534 .tmpOtoWeb/Labo7.java
+08/01/16 | 15:05:29 | lister_evaluations tremblay_gu
+08/01/16 | 15:05:29 | desactiver_eval --public verif209261452283534
+12/01/16 | 18:43:56 | lister_evaluations descheneauxc
+13/01/16 | 18:46:21 | lister_boites descheneauxc
+13/01/16 | 18:46:22 | lister_boites descheneauxc
+13/01/16 | 18:46:44 | lister_boites descheneauxc
+13/01/16 | 18:46:47 | lister_evaluations descheneauxc
+13/01/16 | 18:46:59 | confirmer_remise descheneauxc null TOUE06049208
