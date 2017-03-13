@@ -51,6 +51,11 @@ def page_envoyer():
         err_mdp = "Le mot de passe doit contenir au moins une minuscule."
     elif not re.search(r"[ !#$%&'()*+,-./[\\\]^_`{|}~"+r'"]', motdepasse):
         err_mdp = "Le mot de passe doit contenir au moins 1 symbole."
+    else:
+        err_mdp = ""
+
+    if len(err_mdp) != 0:
+        return render_template('form.html', err_mdp=err_mdp)
 
     salt = uuid.uuid4().hex
     hashed = hashlib.sha512(motdepasse + salt).hexdigest()

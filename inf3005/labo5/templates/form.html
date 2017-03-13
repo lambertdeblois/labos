@@ -29,6 +29,11 @@
                 <tr>
                     <td><label for="motdepasse">Mot de passe :</label></td>
                     <td><input type="password" id="motdepasse" name="motdepasse" size="40"></td>
+                    {% if err_mdp %}
+                      <td>
+                          <p style="color:#700;display:inline">{{ err_mdp }}</p>
+                      </td>
+                      {% endif %}
                 </tr>
                 <tr>
                     <td><input type="submit" value="Envoyer"></td>
