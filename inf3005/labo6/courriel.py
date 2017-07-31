@@ -19,7 +19,7 @@ from email.MIMEMultipart import MIMEMultipart
 from email.MIMEText import MIMEText
 
 source_address = "inf3005@gmail.com"
-destination_address = "lambertdt@hotmail.com"
+destination_address = "example@hotmail.com"
 body = "Please note that I'm writing a script to send emails."
 subject = "I send mails!"
 
